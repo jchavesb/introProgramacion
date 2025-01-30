@@ -1,0 +1,351 @@
+/*
+ * @authors Jairo Chaves Brenes, Jess Montero, Wilson Blanco
+ * Date: Enero 29, 2025
+ * Practica evaluable 2
+ */
+
+package com.mycompany.practica_evaluable_2;
+
+import javax.swing.JOptionPane;
+
+public class Practica_evaluable_2 {
+
+    public static void main(String[] args) {
+               
+       String menu = "Bienvenido/a a programacion orientada a objetos.\n";
+       menu += "Por favor seleccione una opcion:\n";
+       menu += "1. Welcome.\n";
+       menu += "2. Even or odd\n";
+       menu += "3. Check if number is even or odd\n";
+       menu += "4. Number sort, from larger to smallest.\n";
+       menu += "5. Count from 0 to 100.\n";
+       menu += "6. Check if number is negative or positive.\n";
+       menu += "7. Check if numbers ends in 2.\n";
+       menu += "0. Quit program.";
+       
+       Boolean keepLooping = true;
+       while(keepLooping)
+       {
+            int option = Integer.parseInt(JOptionPane.showInputDialog(menu));
+       
+            switch(option)
+            {
+                case 1: 
+                {
+                    showWelcome();
+                    break;
+                }
+                
+                case 2: 
+                {
+                    evenOddNumbers();
+                    break;
+                }
+                
+                case 3:
+                {
+                    validateInteger();
+                    break;
+                }
+                
+                case 4:
+                {
+                    sortGreaterToLesser();
+                    break;
+                }
+                
+                case 5: 
+                {
+                    countOneTo100();
+                    break;
+                }
+                
+                case 6:
+                {
+                    positiveOrNegative();
+                    break;
+                }
+                
+                case 7:
+                {
+                    endsWith2();
+                    break;
+                }
+                
+                case 0:
+                {
+                    keepLooping = false;
+                    JOptionPane.showMessageDialog(null, "Hasta luego.");
+                }  
+            }       
+        }
+    }
+    
+    // Codigo de Jess
+    // Funcion #1 - Bienvenida
+    public static void showWelcome()
+    {
+        JOptionPane.showMessageDialog(null, "Programación Orientada a Objetos");
+        char keepGoing = 'N';
+        String message = "";
+        
+        while (keepGoing == 'N'){
+            String name = "", lastname = "",  phone_number = "";
+            name = JOptionPane.showInputDialog("Digite su nombre: ");
+            lastname = JOptionPane.showInputDialog("Digite su apellido: ");
+            int age = 0;
+            age = Integer.parseInt(JOptionPane.showInputDialog("Digite su edad en números: "));
+            phone_number = JOptionPane.showInputDialog("Digite su número de teléfono: ");
+            message = "Bienvenido al curso de Programación Orientada a Objetos " + name + " " + lastname +
+                             "\nTenemos que su edad es: " + age + 
+                             " y la forma de contactarle es mediante el número de teléfono: " + phone_number +
+                             "\nSi la información es correcta presione Y de lo contrario presione N.";
+                             
+            keepGoing = JOptionPane.showInputDialog(null, message).trim().toUpperCase().charAt(0);
+            while (keepGoing != 'Y' && keepGoing != 'N') {
+                JOptionPane.showMessageDialog(null, "Por favor, ingrese 'Y' para sí o 'N' para no.");
+                keepGoing = JOptionPane.showInputDialog(null, message).trim().toUpperCase().charAt(0);
+            }
+        }
+    }
+    
+    // Funcion #2 - Par o Impar
+    public static void evenOddNumbers()
+    {
+        String message = "";
+                
+        int x;
+        char continueFlag = 'Y';
+        while (continueFlag == 'Y')
+        {
+            String result = "";
+            
+            int number = Integer.parseInt(JOptionPane.showInputDialog("Par o Impar \nDigite el número entero que desea consultar: "));
+            
+            if (number % 2 == 0){
+                result = "par.";
+            }
+            else 
+            {
+                result = "impar.";
+            }
+
+            JOptionPane.showMessageDialog(null, "El número " + number + " es: " + result);   
+            message = "¿Desea consultar otro número? Y/N: ";
+            continueFlag = JOptionPane.showInputDialog(null, message).trim().toUpperCase().charAt(0);
+            while (continueFlag != 'Y' && continueFlag != 'N') {
+                JOptionPane.showMessageDialog(null, "Por favor, ingrese 'Y' para sí o 'N' para no.");
+                continueFlag = JOptionPane.showInputDialog(null, message).trim().toUpperCase().charAt(0);
+            }
+
+        }
+    }
+    
+    // Codigo de Wilson
+    // Funcion #3 - Validacion numero entero
+    public static void validateInteger()
+    {
+        char repeatAgain;
+        
+        boolean whileKeeper = true;
+        
+        while (whileKeeper == true){
+            String result;
+            
+            int number = Integer.parseInt(JOptionPane.showInputDialog("Inserte numero entero: \nLuego, confirmare si es multiplo de 10"));
+            if (number%10==0)
+            {
+                result = "es multiplo de 10";
+            }
+            else 
+            {
+                result ="no es multiplo de 10";
+            }
+                    
+            JOptionPane.showMessageDialog(null, "El numero "+ result );
+                    
+            repeatAgain = JOptionPane.showInputDialog(" Quieres continuar con otro numero?\n'Y' para si o 'N' para no").toUpperCase().trim().charAt(0);
+            if (repeatAgain =='N')
+            {
+                whileKeeper = false;
+            }
+            else 
+            {
+                JOptionPane.showMessageDialog(null,"Continuemos!");
+            }
+        }
+    }
+    
+    // Codigo de Wilson
+    // Funcion #4 - ordenar de mayor a menor
+    public static void sortGreaterToLesser()
+    {
+        JOptionPane.showMessageDialog(null, "A continuacion inserte 3 numeros y seran ordenados de mayor a menor");
+        
+        char repeatAgain;
+                
+        boolean whileKeeper = true;
+        while (whileKeeper == true)
+        {
+            int x;
+            int y;
+            int z;
+            int highest=0;
+            int middle=0;
+            int lowest=0;
+                    
+            x=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el primer numero: "));
+            y=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el segundo numero: "));
+            z=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el tercer numero: "));
+                    
+            if (x >=y && x>=z)
+            {
+                highest=x;
+                if (y>=z)
+                {
+                    middle=y;
+                    lowest=z;
+                }
+                else 
+                {
+                    middle=z;
+                    lowest=y;
+                }
+            }
+                    
+            if (y>=x && y>=z)
+            {
+                highest=y;
+                if (x>=z)
+                {
+                    middle=x;
+                    lowest=z;
+                }
+                else 
+                {
+                    middle=z;
+                    lowest=x;
+                } 
+            }
+                    
+            if (z>=x && z>=y)
+            {
+                highest=z;
+                if (x>=y)
+                {
+                    middle=x;
+                    lowest=y;
+                }
+                else 
+                {
+                    middle=y;
+                    lowest=x;
+                }
+            }
+                    
+            JOptionPane.showMessageDialog(null,"Este es el numero mayor: "+highest+"\nEste el del medio: "+middle+"\nEste el menor: "+lowest);
+
+            repeatAgain = JOptionPane.showInputDialog(" Quieres continuar con otros numeros?\n'Y' para si o 'N' para no").toUpperCase().trim().charAt(0);
+            if (repeatAgain =='N')
+            {
+                whileKeeper = false;
+            }
+            else 
+            {
+                JOptionPane.showMessageDialog(null,"Continuemos!");
+            }
+        }
+       
+        JOptionPane.showMessageDialog(null, "Hasta luego.");   
+    }
+    
+    // Codigo de Jairo
+    // Funcion #5 - contar del 1 al 100
+    public static void countOneTo100() 
+    {
+        var count_text = "Number count, from 0 to 100\n\n";
+        for(int i = 1; i <= 100; i++)
+        {
+            if(i%10==0)
+            {
+                count_text += i + "\n";
+            } 
+            else 
+            {
+                count_text += i + " ";
+            }
+        }
+        
+        JOptionPane.showMessageDialog(null, count_text);
+    }
+    
+    // Function #6 - Positivo o negativo
+    public static void positiveOrNegative()
+    {        
+        String message_text = "Enter a number to check if it is negative or positive";
+        message_text += "\nWrite 0 (zero) to quit.";
+        
+        int number;
+        
+        while(true) 
+        {
+            String user_number = JOptionPane.showInputDialog(message_text);
+
+            String result_text = "The number '"+user_number+"' is ";
+
+            number = Integer.parseInt(user_number);
+            
+            if(number > 0)
+            {
+                result_text += "positive";
+            } 
+            else if(number < 0) 
+            {
+                result_text += "negative";
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null,  "Ok, bye!");
+                break;
+            }
+            
+            JOptionPane.showMessageDialog(null, result_text);
+        }
+    }
+    
+    // function #7 - check if a number ends in 2
+    public static void endsWith2() 
+    {
+        String message_text = "Enter a number to check if it ends in 2";
+        message_text += "\nWrite 0 (zero) to quit.";
+        
+        String user_number;
+        String text_results = "";
+            
+        int ends_2_counter = 0;
+        int all_numbers_counter = 0;
+        int number;
+        
+        while(true) 
+        {
+            user_number = JOptionPane.showInputDialog(message_text);
+            number = Integer.parseInt(user_number);
+            
+            all_numbers_counter++;
+            
+            if(number%10==2)
+            {
+                ends_2_counter++;
+            } 
+            else if(number==0)
+            {
+                break;
+            }
+            
+            text_results = "You wrote " + all_numbers_counter + " numbers\n";
+            text_results += "and " + ends_2_counter + " ends with a 2.";
+        }
+        
+         JOptionPane.showMessageDialog(null, text_results);
+    }
+}
