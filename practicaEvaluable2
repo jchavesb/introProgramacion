@@ -1,5 +1,5 @@
 /*
- * @authors Jairo Chaves Brenes, Jess Montero, Wilson Blanco
+ * @authors Jairo Chaves Brenes, Jessica Montero Obando, Wilson Blanco Hernandez
  * Date: Enero 29, 2025
  * Practica evaluable 2
  */
@@ -81,7 +81,7 @@ public class Practica_evaluable_2 {
         }
     }
     
-    // Codigo de Jess
+    // Codigo de Jessica Montero Obando
     // Funcion #1 - Bienvenida
     public static void showWelcome()
     {
@@ -141,7 +141,7 @@ public class Practica_evaluable_2 {
         }
     }
     
-    // Codigo de Wilson
+    // Codigo de Wilson Blaco Hernandez
     // Funcion #3 - Validacion numero entero
     public static void validateInteger()
     {
@@ -176,7 +176,7 @@ public class Practica_evaluable_2 {
         }
     }
     
-    // Codigo de Wilson
+    // Codigo de Wilson Blanco Hernandez
     // Funcion #4 - ordenar de mayor a menor
     public static void sortGreaterToLesser()
     {
@@ -259,11 +259,11 @@ public class Practica_evaluable_2 {
         JOptionPane.showMessageDialog(null, "Hasta luego.");   
     }
     
-    // Codigo de Jairo
+    // Codigo de Jairo Chaves Brenes
     // Funcion #5 - contar del 1 al 100
     public static void countOneTo100() 
     {
-        var count_text = "Number count, from 0 to 100\n\n";
+        var count_text = "Contar del 1 al 100\n\n";
         for(int i = 1; i <= 100; i++)
         {
             if(i%10==0)
@@ -282,8 +282,7 @@ public class Practica_evaluable_2 {
     // Function #6 - Positivo o negativo
     public static void positiveOrNegative()
     {        
-        String message_text = "Enter a number to check if it is negative or positive";
-        message_text += "\nWrite 0 (zero) to quit.";
+        String message_text = "Ingrese un numero para evaluar si es positivo o negativo.";
         
         int number;
         
@@ -291,21 +290,20 @@ public class Practica_evaluable_2 {
         {
             String user_number = JOptionPane.showInputDialog(message_text);
 
-            String result_text = "The number '"+user_number+"' is ";
+            String result_text = "El numero '"+user_number+"' es ";
 
             number = Integer.parseInt(user_number);
             
             if(number > 0)
             {
-                result_text += "positive";
+                result_text += "positivo";
             } 
             else if(number < 0) 
             {
-                result_text += "negative";
+                result_text += "negativo";
             }
             else
             {
-                JOptionPane.showMessageDialog(null,  "Ok, bye!");
                 break;
             }
             
@@ -313,11 +311,11 @@ public class Practica_evaluable_2 {
         }
     }
     
-    // function #7 - check if a number ends in 2
+    // Funcion #7 - Valida si un numero termina en 2
     public static void endsWith2() 
     {
-        String message_text = "Enter a number to check if it ends in 2";
-        message_text += "\nWrite 0 (zero) to quit.";
+        String message_text = "Ingrese numeros varios numeros para evaluar si terminan en dos.";
+        message_text += "\nEscriba 0 (cero) para terminar y mostrar los resultados.";
         
         String user_number;
         String text_results = "";
@@ -342,8 +340,8 @@ public class Practica_evaluable_2 {
                 break;
             }
             
-            text_results = "You wrote " + all_numbers_counter + " numbers\n";
-            text_results += "and " + ends_2_counter + " ends with a 2.";
+            text_results = "Se ingresaron " + all_numbers_counter + " numeros\n";
+            text_results += "de los cuales " + ends_2_counter + " terminal en 2.";
         }
         
          JOptionPane.showMessageDialog(null, text_results);
