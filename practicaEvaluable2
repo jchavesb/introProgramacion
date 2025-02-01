@@ -12,16 +12,16 @@ public class Practica_evaluable_2 {
 
     public static void main(String[] args) {
                
-       String menu = "Bienvenido/a a programacion orientada a objetos.\n";
-       menu += "Por favor seleccione una opcion:\n";
-       menu += "1. Welcome.\n";
-       menu += "2. Even or odd\n";
-       menu += "3. Check if number is even or odd\n";
-       menu += "4. Number sort, from larger to smallest.\n";
-       menu += "5. Count from 0 to 100.\n";
-       menu += "6. Check if number is negative or positive.\n";
-       menu += "7. Check if numbers ends in 2.\n";
-       menu += "0. Quit program.";
+       String menu = "Bienvenido(a) a programación orientada a objetos.\n";
+       menu += "Por favor, seleccione una opción:\n";
+       menu += "1. Bienvenido\n";
+       menu += "2. Par o Impar\n";
+       menu += "3. Validación de Número Entero\n";
+       menu += "4. Ordenar de Mayor a Menor\n";
+       menu += "5. Del 1 al 100\n";
+       menu += "6. Compruebe si el número es positivo o negativo\n";
+       menu += "7. Validación cantidad terminada en 2\n";
+       menu += "0. Salir del sistema";
        
        Boolean keepLooping = true;
        while(keepLooping)
@@ -75,7 +75,7 @@ public class Practica_evaluable_2 {
                 case 0:
                 {
                     keepLooping = false;
-                    JOptionPane.showMessageDialog(null, "Hasta luego.");
+                    JOptionPane.showMessageDialog(null, "Muchas gracias, hasta pronto.","Fin del Sistema",JOptionPane.INFORMATION_MESSAGE);
                 }  
             }       
         }
@@ -85,7 +85,6 @@ public class Practica_evaluable_2 {
     // Funcion #1 - Bienvenida
     public static void showWelcome()
     {
-        JOptionPane.showMessageDialog(null, "Programación Orientada a Objetos");
         char keepGoing = 'N';
         String message = "";
         
@@ -103,7 +102,7 @@ public class Practica_evaluable_2 {
                              
             keepGoing = JOptionPane.showInputDialog(null, message).trim().toUpperCase().charAt(0);
             while (keepGoing != 'Y' && keepGoing != 'N') {
-                JOptionPane.showMessageDialog(null, "Por favor, ingrese 'Y' para sí o 'N' para no.");
+                JOptionPane.showMessageDialog(null, "Por favor, ingrese 'Y' para sí o 'N' para no.","Atención",JOptionPane.WARNING_MESSAGE);
                 keepGoing = JOptionPane.showInputDialog(null, message).trim().toUpperCase().charAt(0);
             }
         }
@@ -134,7 +133,7 @@ public class Practica_evaluable_2 {
             message = "¿Desea consultar otro número? Y/N: ";
             continueFlag = JOptionPane.showInputDialog(null, message).trim().toUpperCase().charAt(0);
             while (continueFlag != 'Y' && continueFlag != 'N') {
-                JOptionPane.showMessageDialog(null, "Por favor, ingrese 'Y' para sí o 'N' para no.");
+                JOptionPane.showMessageDialog(null, "Por favor, ingrese 'Y' para sí o 'N' para no.","Atención",JOptionPane.WARNING_MESSAGE);
                 continueFlag = JOptionPane.showInputDialog(null, message).trim().toUpperCase().charAt(0);
             }
 
@@ -152,26 +151,30 @@ public class Practica_evaluable_2 {
         while (whileKeeper == true){
             String result;
             
-            int number = Integer.parseInt(JOptionPane.showInputDialog("Inserte numero entero: \nLuego, confirmare si es multiplo de 10"));
+            int number = Integer.parseInt(JOptionPane.showInputDialog("Inserte número entero: \nLuego, confirmaré si es múltiplo de 10"));
             if (number%10==0)
             {
-                result = "es multiplo de 10";
+                result = "es múltiplo de 10";
             }
             else 
             {
-                result ="no es multiplo de 10";
+                result ="no es múltiplo de 10";
             }
                     
-            JOptionPane.showMessageDialog(null, "El numero "+ result );
+            JOptionPane.showMessageDialog(null, "El número "+ result );
                     
-            repeatAgain = JOptionPane.showInputDialog(" Quieres continuar con otro numero?\n'Y' para si o 'N' para no").toUpperCase().trim().charAt(0);
+            repeatAgain = JOptionPane.showInputDialog(" ¿Desea continuar con otro número?\n'Y' para si o 'N' para no").toUpperCase().trim().charAt(0);
+            while (repeatAgain != 'Y' && repeatAgain != 'N') {
+                JOptionPane.showMessageDialog(null, "Por favor, ingrese 'Y' para sí o 'N' para no.","Atención",JOptionPane.WARNING_MESSAGE);
+                repeatAgain = JOptionPane.showInputDialog(" ¿Desea continuar con otro número?\n'Y' para si o 'N' para no").toUpperCase().trim().charAt(0);
+            }
             if (repeatAgain =='N')
             {
                 whileKeeper = false;
             }
             else 
             {
-                JOptionPane.showMessageDialog(null,"Continuemos!");
+                JOptionPane.showMessageDialog(null,"¡Continuemos!");
             }
         }
     }
@@ -180,7 +183,7 @@ public class Practica_evaluable_2 {
     // Funcion #4 - ordenar de mayor a menor
     public static void sortGreaterToLesser()
     {
-        JOptionPane.showMessageDialog(null, "A continuacion inserte 3 numeros y seran ordenados de mayor a menor");
+        JOptionPane.showMessageDialog(null, "A continuación inserte 3 números y serán ordenados de mayor a menor");
         
         char repeatAgain;
                 
@@ -194,9 +197,9 @@ public class Practica_evaluable_2 {
             int middle=0;
             int lowest=0;
                     
-            x=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el primer numero: "));
-            y=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el segundo numero: "));
-            z=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el tercer numero: "));
+            x=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el primer número: "));
+            y=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el segundo número: "));
+            z=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el tercer número: "));
                     
             if (x >=y && x>=z)
             {
@@ -243,16 +246,20 @@ public class Practica_evaluable_2 {
                 }
             }
                     
-            JOptionPane.showMessageDialog(null,"Este es el numero mayor: "+highest+"\nEste el del medio: "+middle+"\nEste el menor: "+lowest);
+            JOptionPane.showMessageDialog(null,"Este es el número mayor: "+highest+"\nEste el del medio: "+middle+"\nEste el menor: "+lowest);
 
-            repeatAgain = JOptionPane.showInputDialog(" Quieres continuar con otros numeros?\n'Y' para si o 'N' para no").toUpperCase().trim().charAt(0);
+            repeatAgain = JOptionPane.showInputDialog(" ¿Desea continuar con otros números?\n'Y' para si o 'N' para no").toUpperCase().trim().charAt(0);
+            while (repeatAgain != 'Y' && repeatAgain != 'N') {
+                JOptionPane.showMessageDialog(null, "Por favor, ingrese 'Y' para sí o 'N' para no.","Atención",JOptionPane.WARNING_MESSAGE);
+                repeatAgain = JOptionPane.showInputDialog(" ¿Desea continuar con otros números?\n'Y' para si o 'N' para no").toUpperCase().trim().charAt(0);
+            }
             if (repeatAgain =='N')
             {
                 whileKeeper = false;
             }
             else 
             {
-                JOptionPane.showMessageDialog(null,"Continuemos!");
+                JOptionPane.showMessageDialog(null,"¡Continuemos!");
             }
         }
        
@@ -282,7 +289,7 @@ public class Practica_evaluable_2 {
     // Function #6 - Positivo o negativo
     public static void positiveOrNegative()
     {        
-        String message_text = "Ingrese un numero para evaluar si es positivo o negativo.";
+        String message_text = "Ingrese un número para evaluar si es positivo o negativo.\nEscriba 0 (cero) para salir";
         
         int number;
         
@@ -290,7 +297,7 @@ public class Practica_evaluable_2 {
         {
             String user_number = JOptionPane.showInputDialog(message_text);
 
-            String result_text = "El numero '"+user_number+"' es ";
+            String result_text = "El número '"+user_number+"' es ";
 
             number = Integer.parseInt(user_number);
             
@@ -314,8 +321,8 @@ public class Practica_evaluable_2 {
     // Funcion #7 - Valida si un numero termina en 2
     public static void endsWith2() 
     {
-        String message_text = "Ingrese numeros varios numeros para evaluar si terminan en dos.";
-        message_text += "\nEscriba 0 (cero) para terminar y mostrar los resultados.";
+        String message_text = "Ingrese varios números para evaluar si terminan en dos";
+        message_text += "\nEscriba 0 (cero) para terminar y mostrar los resultados";
         
         String user_number;
         String text_results = "";
@@ -340,8 +347,8 @@ public class Practica_evaluable_2 {
                 break;
             }
             
-            text_results = "Se ingresaron " + all_numbers_counter + " numeros\n";
-            text_results += "de los cuales " + ends_2_counter + " terminal en 2.";
+            text_results = "Se ingresaron " + all_numbers_counter + " números\n";
+            text_results += "de los cuales " + ends_2_counter + " terminan en 2.";
         }
         
          JOptionPane.showMessageDialog(null, text_results);
