@@ -1,6 +1,6 @@
 /*
  * @authors Jairo Chaves Brenes, Jessica Montero Obando, Wilson Blanco Hernandez
- * Date: Febrero 1, 2025
+ * Date: Enero 31, 2025
  * Practica evaluable 2
  */
 
@@ -10,9 +10,8 @@ import javax.swing.JOptionPane;
 
 public class Practica_evaluable_2 {
 
-    public static void main(String[] args) {
-               
-       String menu = "Bienvenido(a) a programación orientada a objetos.\n";
+       public static void main(String[] args) {
+        String menu = "Bienvenido(a) a programación orientada a objetos.\n";
        menu += "Por favor, seleccione una opción:\n";
        menu += "1. Bienvenido\n";
        menu += "2. Par o Impar\n";
@@ -140,15 +139,13 @@ public class Practica_evaluable_2 {
         }
     }
     
-    // Codigo de Wilson Blaco Hernandez
+    // Codigo de Wilson Blanco Hernandez
     // Funcion #3 - Validacion numero entero
     public static void validateInteger()
     {
         char repeatAgain;
         
-        boolean whileKeeper = true;
-        
-        while (whileKeeper == true){
+        while (true){
             String result;
             
             int number = Integer.parseInt(JOptionPane.showInputDialog("Inserte número entero: \nLuego, confirmaré si es múltiplo de 10"));
@@ -170,7 +167,7 @@ public class Practica_evaluable_2 {
             }
             if (repeatAgain =='N')
             {
-                whileKeeper = false;
+               break;
             }
             else 
             {
@@ -187,66 +184,26 @@ public class Practica_evaluable_2 {
         
         char repeatAgain;
                 
-        boolean whileKeeper = true;
-        while (whileKeeper == true)
+        while (true)
         {
-            int x;
-            int y;
-            int z;
-            int highest=0;
-            int middle=0;
-            int lowest=0;
-                    
-            x=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el primer número: "));
-            y=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el segundo número: "));
-            z=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el tercer número: "));
-                    
-            if (x >=y && x>=z)
-            {
-                highest=x;
-                if (y>=z)
-                {
-                    middle=y;
-                    lowest=z;
+            int number1 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el primer numero: "));
+            int number2 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el segundo numero: "));
+            int number3 = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el tercer numero: "));
+            int temp;
+            do{
+                   if (number1<=number2){
+                   temp=number1;
+                   number1=number2;
+                   number2=temp;
+                } else if(number2<=number3){
+                   temp=number2;
+                   number2=number3;
+                   number3=temp;
                 }
-                else 
-                {
-                    middle=z;
-                    lowest=y;
-                }
-            }
-                    
-            if (y>=x && y>=z)
-            {
-                highest=y;
-                if (x>=z)
-                {
-                    middle=x;
-                    lowest=z;
-                }
-                else 
-                {
-                    middle=z;
-                    lowest=x;
-                } 
-            }
-                    
-            if (z>=x && z>=y)
-            {
-                highest=z;
-                if (x>=y)
-                {
-                    middle=x;
-                    lowest=y;
-                }
-                else 
-                {
-                    middle=y;
-                    lowest=x;
-                }
-            }
-                    
-            JOptionPane.showMessageDialog(null,"Este es el número mayor: "+highest+"\nEste el del medio: "+middle+"\nEste el menor: "+lowest);
+                
+            }while(number1<=number2 || number2<=number3);
+            
+            JOptionPane.showMessageDialog(null,"Este es el numero mayor: "+number1+"\nEste el del medio: "+number2+"\nEste el menor: "+number3);
 
             repeatAgain = JOptionPane.showInputDialog(" ¿Desea continuar con otros números?\n'Y' para si o 'N' para no").toUpperCase().trim().charAt(0);
             while (repeatAgain != 'Y' && repeatAgain != 'N') {
@@ -255,16 +212,17 @@ public class Practica_evaluable_2 {
             }
             if (repeatAgain =='N')
             {
-                whileKeeper = false;
+                break;
             }
             else 
             {
                 JOptionPane.showMessageDialog(null,"¡Continuemos!");
             }
+
         }
-       
-        JOptionPane.showMessageDialog(null, "Hasta luego.");   
     }
+       
+    
     
     // Codigo de Jairo Chaves Brenes
     // Funcion #5 - contar del 1 al 100
