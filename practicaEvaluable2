@@ -11,66 +11,67 @@ import javax.swing.JOptionPane;
 public class Practica_evaluable_2 {
 
        public static void main(String[] args) {
+       
         String menu = "Bienvenido(a) a programación orientada a objetos.\n";
-       menu += "Por favor, seleccione una opción:\n";
-       menu += "1. Bienvenido\n";
-       menu += "2. Par o Impar\n";
-       menu += "3. Validación de Número Entero\n";
-       menu += "4. Ordenar de Mayor a Menor\n";
-       menu += "5. Del 1 al 100\n";
-       menu += "6. Compruebe si el número es positivo o negativo\n";
-       menu += "7. Validación cantidad terminada en 2\n";
-       menu += "0. Salir del sistema";
+        menu += "Por favor, seleccione una opción:\n";
+        menu += "1. Bienvenido\n";
+        menu += "2. Par o Impar\n";
+        menu += "3. Validación de Número Entero\n";
+        menu += "4. Ordenar de Mayor a Menor\n";
+        menu += "5. Del 1 al 100\n";
+        menu += "6. Compruebe si el número es positivo o negativo\n";
+        menu += "7. Validación cantidad terminada en 2\n";
+        menu += "0. Salir del sistema";
        
-       Boolean keepLooping = true;
-       while(keepLooping)
-       {
+        Boolean keepLooping = true;
+        while(keepLooping)
+        {
             int option = Integer.parseInt(JOptionPane.showInputDialog(menu));
-       
+
             switch(option)
             {
-                case 1: 
+               case 1: 
                 {
                     showWelcome();
                     break;
                 }
-                
+
                 case 2: 
                 {
                     evenOddNumbers();
                     break;
-                }
-                
+               }
+
                 case 3:
                 {
                     validateInteger();
                     break;
                 }
-                
+
                 case 4:
                 {
                     sortGreaterToLesser();
                     break;
                 }
-                
+
                 case 5: 
                 {
                     countOneTo100();
                     break;
                 }
-                
+
                 case 6:
                 {
                     positiveOrNegative();
                     break;
                 }
-                
+
                 case 7:
                 {
                     endsWith2();
                     break;
                 }
-                
+
                 case 0:
                 {
                     keepLooping = false;
@@ -222,93 +223,94 @@ public class Practica_evaluable_2 {
         }
     }
        
-    
-    
     // Codigo de Jairo Chaves Brenes
     // Funcion #5 - contar del 1 al 100
     public static void countOneTo100() 
     {
-        var count_text = "Contar del 1 al 100\n\n";
-        for(int i = 1; i <= 100; i++)
+        var countText = "Contar del 1 al 100\n\n";
+        for (int i = 1; i <= 100; i++)
         {
-            if(i%10==0)
+            if (i % 10 == 0)
             {
-                count_text += i + "\n";
+                countText += i + "\n";
             } 
             else 
             {
-                count_text += i + " ";
+                countText += i + " ";
             }
         }
         
-        JOptionPane.showMessageDialog(null, count_text);
+        JOptionPane.showMessageDialog(null, countText);
     }
     
     // Function #6 - Positivo o negativo
     public static void positiveOrNegative()
     {        
-        String message_text = "Ingrese un número para evaluar si es positivo o negativo.\nEscriba 0 (cero) para salir";
+        String messageText = "Ingrese un número para evaluar si es positivo o negativo.\nEscriba 0 (cero) para salir";
         
         int number;
         
+        String userNumber = "";
+        String resultText = "";
+        
         while(true) 
         {
-            String user_number = JOptionPane.showInputDialog(message_text);
+            userNumber = JOptionPane.showInputDialog(messageText);
+          
+            resultText = "El número '"+userNumber+"' es ";
 
-            String result_text = "El número '"+user_number+"' es ";
-
-            number = Integer.parseInt(user_number);
+            number = Integer.parseInt(userNumber);
             
-            if(number > 0)
+            if (number > 0)
             {
-                result_text += "positivo";
+                resultText += "positivo";
             } 
             else if(number < 0) 
             {
-                result_text += "negativo";
+                resultText += "negativo";
             }
             else
             {
                 break;
             }
             
-            JOptionPane.showMessageDialog(null, result_text);
+            JOptionPane.showMessageDialog(null, resultText);
         }
     }
     
     // Funcion #7 - Valida si un numero termina en 2
     public static void endsWith2() 
     {
-        String message_text = "Ingrese varios números para evaluar si terminan en dos";
-        message_text += "\nEscriba 0 (cero) para terminar y mostrar los resultados";
+        //String messageText = "Ingrese un número para evaluar si termina en dos";
+        String messageText = "Ingrese un número.\nEscriba 0 (cero) para terminar y mostrar los resultados";
         
-        String user_number;
-        String text_results = "";
+        String userNumber = "";
+        String textResults = "";
             
-        int ends_2_counter = 0;
-        int all_numbers_counter = 0;
-        int number;
+        int ends2Counter = 0;
+        int allNumbersCounter = 0;
+        int number = 0;
         
-        while(true) 
+        while (true) 
         {
-            user_number = JOptionPane.showInputDialog(message_text);
-            number = Integer.parseInt(user_number);
+            userNumber = JOptionPane.showInputDialog(messageText);
+            number = Integer.parseInt(userNumber);
             
-            all_numbers_counter++;
+            allNumbersCounter++;
             
-            if(number%10==2)
+            if (number % 10 == 2)
             {
-                ends_2_counter++;
+                ends2Counter++;
             } 
-            else if(number==0)
+            else if (number == 0)
             {
                 break;
             }
             
-            text_results = "Se ingresaron " + all_numbers_counter + " números\n";
-            text_results += "de los cuales " + ends_2_counter + " terminan en 2.";
+            textResults = "Se ingresaron " + allNumbersCounter + " números\n";
+            textResults += "de los cuales " + ends2Counter + " terminan en 2.";
         }
         
-         JOptionPane.showMessageDialog(null, text_results);
+        JOptionPane.showMessageDialog(null, textResults);
     }
 }
