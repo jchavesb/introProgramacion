@@ -5,14 +5,36 @@
  */
 
 package com.mycompany.proyectofinaladelanto1;
+/*
+ * @authors Jairo Chaves Brenes, Jessica Montero Obando, Wilson Blanco Hernandez
+ * Date: Febrero 12, 2025
+ * Practica evaluable 3
+ */
+
+package com.mycompany.practicaevaluable3;
 
 /**
  *
  * @author jc
  */
+
+public class Animal {
+    private String nombre;
+    private String especie;
+    private int edad;
+}
+
+public class Zoologico {
+    private String nombre;
+    private String localidad;
+    private int capacidadMax;
+    private Animal[] animales;
+    private int cantAnimales;
+}
+
 public class ProyectoFinalAdelanto1 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        System.out.println("Adelanto #1 - Proyecto final");
     }
 }
