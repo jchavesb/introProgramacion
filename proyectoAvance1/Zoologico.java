@@ -1,3 +1,9 @@
+/*
+ * @authors Jairo Chaves Brenes, Jessica Montero Obando, Wilson Blanco Hernandez
+ * Date: Febrero 16, 2025
+ * Proyecto Final - 1er adelanto.
+ */
+
 package com.mycompany.proyectofinaladelanto1;
 
 public class Zoologico {
@@ -6,61 +12,52 @@ public class Zoologico {
     private int capacidadMax;
     private Animal[] animal;
     private int cantAnimales;
-    
-    
+      
     public Zoologico(String nombreZoologico, String localidad, int capacidadMaxima) {
        // Constructor
     }
 
-    public void agregarAnimal(Animal animal) {
-       // Métodos para agregar y eliminar animales
-    }
-
-    public void eliminarAnimal(String nombre) {
-       // Método para eliminar los animales en el zoológico
-    }
-
-    public void mostrarAnimales() {
-        // Método para mostrar los animales en el zoológico
-    }
-    
     public void getNombre() {
-        // Método para obtener nombre del zoo
+       // Método para obtener nombre del animal
     }
     
     public void setNombre() {
-        // Método para agregar nombre del zoológico
+       // Método para obtener nombre del animal
     }
-    
+
+    public  void setLocalidad() {
+        // Método para obtener la especie de animal
+    }
+
     public void getLocalidad() {
-        // Método para obtener localidad
-    }
-    
-    public void setLocalidad() {
-        // Método para agregar localidad
+        // Método para obtener la especie de animal
     }
     
     public void setCapacidadMaxima() {
-        // Método para agregarcapacidad max
+        // Método para obtener la edad del animal
     }
     
     public void getCapacidadMaxima() {
-        // Método obtener agregarcapacidad max
+        // Método para obtener la edad del animal
     }
     
-    public void reporteDeAnimales() {
-        // Metodo para hacer reporte
-    }
-    
-    public void buscarAnimales(String Animal) {
-        // metidi para buscar animales
+    public void agregarAnimal(Animal animal, int posicion) {
+        // Método para agregar un animal
     }
     
     public void eliminarAnimal(String nombreAnimal) {
-        // Metodo eliminar animal
+        // Método para eliminar un animal
     }
     
-    public void reubicarAnimal(Animal animal, int posicion) {
-        // metodo para reubicar animal
+    public void reporteAnimales(Animal animal, int posicion) {
+        // Método para listar animales
+    }
+    
+    public void buscarAnimal(String animal) {
+        // Método para buscar un animal
+    }
+    
+    public void reubicarAnimal(Animal nombreAnimal, int posicion) {
+        // Método para reubicar un animal
     }
 }
