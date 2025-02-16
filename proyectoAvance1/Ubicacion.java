@@ -14,26 +14,19 @@ public class Ubicacion {
     
     // Atributos de clase
     public void setBioma(String bioma){
-
-    } 
-
-    // Metodo para elegir un bioma.
+        this.bioma = bioma;
+    } // Metodo para elegir un bioma.
     public String getBioma(){
-
-    } 
-
-    // Metodo para obtener el bioma elegido.
-    public void setPosicion(){
-
-    } 
-
-    // Metodo para elegir una posicion para el animal
+        return this.bioma;
+    } // Metodo para obtener el bioma elegido.
+    public void setPosicion(int posicion){
+        this.posicion = posicion;
+    } // Metodo para elegir una posicion para el animal
     public int getPosicion(){
-
-    } 
-
-    // Metodo para obtener la posicion
-    public void getAnimales(){
+        return this.posicion;
+    } // Metodo para obtener la posicion
+    public Animal[] getAnimales(){
+        return this.animales;
     } // Metodo para obtener los animales dentro de la ubicacion.
 
 }
