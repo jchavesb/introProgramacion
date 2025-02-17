@@ -7,7 +7,7 @@
 package com.mycompany.proyectofinaladelanto1;
 
 public class Animal {
-     private String nombre;
+    private String nombre;
     private String especie;
     private int edad;
     
@@ -37,11 +37,9 @@ public class Animal {
         // Método para obtener la edad del animal
         this.edad = edad;
     }
-	//public void toString() {
-        // Revisar este metodo, al ser declarado muestra el error:
-        // toString() in Animal cannot override toString() in Object
-        // return type void is not compatible with String
-    //}
-}
-    
+    @override
+    public String toString() {
+	//Método para obtener el detalle completo del animal
+	return "Nombre: " + this.nombre + " Especie: " + this.especie + " Edad: " + this.edad;
+    }
 }
